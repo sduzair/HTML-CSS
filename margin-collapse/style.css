@@ -1,9 +1,36 @@
-p {
-    margin-top: 24px;
-    margin-bottom: 24px;
+* {
+    box-sizing: border-box;
 }
 
-span {
-    margin-left: 24px;
-    margin-right: 24px;
+body {
+    margin: 0;
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+}
+
+.span-inlines {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.p-block {
+    background-color: #03A9F4;
+    min-width: 100%;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    outline: 4px solid #e4c482;
+}
+
+.span-inline {
+    background-color: #03A9F4;
+    margin-left: 4px;
+    margin-right: 4px;
+    outline: 4px solid #e4c482;
 }
