@@ -24,6 +24,7 @@ body {
   color: #fff;
 }
 
-/* .box-element:nth-child(2) {
+.box-element:nth-child(2) {
+  justify-self: start;
   align-self: start;
-} */
+}
