@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  width: 210px;
+  min-height: 70px;
+  background-color: #fff;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  align-items: center;
+}
+
+.box-element {
+  background-color: cornflowerblue;
+  color: #fff;
+}
+
+/* .box-element:nth-child(2) {
+  align-self: start;
+} */
