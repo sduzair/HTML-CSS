@@ -8,12 +8,16 @@ The grid template columns property can be used to define the number of columns i
 
 ```css
 .box {
+  --col: 6;
+  --row: 6;
+  --gap: 2px;
+  --box-side: 20px;
   background: transparent;
   background-color: tomato;
   display: grid;
-  width: calc(4*30px + 5*2px);
-  grid-template-rows: repeat(6, 20px);
-  grid-template-columns: repeat(auto-fit, 20px);
-  gap: 2px;
+  width: calc(var(--col)*var(--box-side) + (var(--col) - 1)*var(--gap));
+  grid-template-columns: repeat(auto-fit, var(--box-side));
+  grid-template-rows: repeat(var(--row), var(--box-side));
+  gap: var(--gap);
 }
 ```
