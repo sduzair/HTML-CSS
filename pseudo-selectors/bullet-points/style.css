@@ -1,0 +1,49 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+}
+
+.counter {
+  color: #999;
+  margin: 10em;
+  font-size: 1.5em;
+
+  counter-reset: section;
+}
+
+.section {
+  position: relative;
+  margin-bottom: 0;
+  /* font-size: 1.5em; */
+}
+
+.section::before {
+  position: absolute;
+  counter-increment: section;
+  content: counter(section);
+  font-size: 2em;
+  inset: -0.2em 0 0 -1.2em;
+  /* inset: 0; !Don't */
+
+  background: #999;
+  color: #fff;
+  width: 1em;
+  text-align: center;
+  height: 1em;
+  border-radius: 50%;
+  line-height: 1em;
+}
+
+.counter>p {
+  font-size: 0.7em;
+  margin-top: 0;
+}
