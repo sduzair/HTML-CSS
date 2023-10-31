@@ -7,20 +7,15 @@ The `:has()` pseudo-class takes a selector list as its argument, and selects an 
 </div>
 
 ```scss
-.link a {
+.section:has(.link) {
   position: relative;
 }
 
-.link a::after {
-  @include material-icon();
-  content: $link-icon;
-}
-
-.section:has(.link) > .link {
+.section > .link {
   position: absolute;
   top: 0;
   margin: 0;
 }
 ```
 
-Only the `.link` elements that are a child of a `.section` element will have `absolute` positioning applied to it.
+Only when the `.section` element has a `.link` element as a child, it is positioned *relatively* so that the `.link` element that is positioned *absolutely* is relative to `.section`.

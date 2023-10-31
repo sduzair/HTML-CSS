@@ -49,10 +49,6 @@ body {
   counter-reset: section;
 }
 
-.section {
-  position: relative;
-}
-
 .section > h3 {
   position: relative;
 }
@@ -73,16 +69,16 @@ body {
   line-height: 1em;
 }
 
-.link a {
-  position: relative;
-}
-
 .link a::after {
   @include material-icon();
   content: $link-icon;
 }
 
-.section:has(.link) > .link {
+.section:has(.link) {
+  position: relative;
+}
+
+.section > .link {
   position: absolute;
   top: 0;
   margin: 0;
