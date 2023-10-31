@@ -1,0 +1,94 @@
+* {
+  box-sizing: border-box;
+}
+
+$link-icon: "\e157";
+
+@mixin material-icon() {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  font-feature-settings: "liga";
+}
+
+body {
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+}
+
+.counter {
+  color: #999;
+  margin: 10em;
+  font-size: 1.5em;
+  // grid
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(25em, 1fr));
+  grid-gap: 1em;
+  // counter
+  counter-reset: section;
+}
+
+.section {
+  position: relative;
+}
+
+.section > h3 {
+  position: relative;
+}
+
+.section > h3::before {
+  position: absolute;
+  counter-increment: section;
+  content: counter(section);
+  font-size: 2em;
+  inset: -0.2em 0 0 -1.2em;
+  /* inset: 0; !Don't */
+  background: #999;
+  color: #fff;
+  width: 1em;
+  text-align: center;
+  height: 1em;
+  border-radius: 50%;
+  line-height: 1em;
+}
+
+.link a {
+  position: relative;
+}
+
+.link a::after {
+  @include material-icon();
+  content: $link-icon;
+}
+
+.section:has(.link) > .link {
+  position: absolute;
+  top: 0;
+  margin: 0;
+}
+
+.section > p:nth-child(-1) {
+  font-size: 0.7em;
+  margin-top: 0;
+}
