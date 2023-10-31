@@ -18,12 +18,12 @@ body {
   padding: 20px;
 }
 
-/* Selects direct h1 element children */
+/* Child Selector: Selects direct h1 element children */
 .parent>h1 {
   color: brown;
 }
 
-/* Selects all h1 element children */
+/* Descendent Selector: Selects all h1 element children */
 /* .parent h1 {
   color: brown;
 } */
