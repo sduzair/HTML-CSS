@@ -4,36 +4,44 @@
 
 Margin collapse is a phenomenon where the vertical margins of two elements are combined to form a single margin.
 
-![Margin Collapse](./margin-collapse_.png)
+![Margin Collapse](127.0.0.1_5500_index.html.png)
 
-### Adjacent Block-level Elements - Affected
+### Adjacent Block-level Elements
 
-The `.p-block` block-level elements have their top and bottom margins collapsed. The total margin is the largest of the two margins. In this case, the total margin is 4px.
+The `.container__item` block-level elements have their bottom and top margins collapsed. The total margin is the largest of the two margins. In this case, the total margin is `$container__item-margin`.
 
-```css
-.p-block {
-    background-color: #03A9F4;
-    min-width: 100%;
-    margin-top: 4px;
-    margin-bottom: 4px;
-    outline: 4px solid #e4c482;
+```scss
+$container__item-margin: 1em;
+.container__item {
+  margin: $container__item-margin;
+  padding: 1.1em;
+  font-size: $font-size-h1;
+  text-align: center;
+  background-color: $onPrimary;
+  color: $primary;
+  outline: $container__item-margin solid $primary;
 }
 ```
 
-### Adjacent Inline Elements - Not Affected
-
-The `.span-inline` inline elements do not have their margins collapsed as this only happens vertically. The total margin is the sum of the two margins. In this case, the total margin is 8px.
-
-```css
-.span-inline {
-    background-color: #03A9F4;
-    margin-left: 4px;
-    margin-right: 4px;
-    outline: 4px solid #e4c482;
-}
-```
+> Note: The `outline` property is used to show the margin.
 
 ## How to prevent margin collapse?
 
 1. Use `flexbox` or `grid` to create space between elements. `flexbox` and `grid` do not have margin collapse.
 2. Use `padding` instead of `margin` to create space between elements.
+
+### Flexbox Solution
+
+The `.container--flex` element is the new parent of the `.container__item` elements and now there is no margin collapse and total margin between them is `2 x $container__item-margin`.
+
+![Flexbox solution](127.0.0.1_5500_flex-solution.html.png)
+
+```scss
+.container--flex {
+  @include container;
+  margin: 7em auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+```

@@ -4,12 +4,12 @@
 // Font Variables
 $roboto: "Roboto", serif;
 $body-font: $roboto;
-$font-size-h1: 2em;
-$font-size-h2: 1.5em;
-$font-size-h3: 1.17em;
-$font-size-h4: 1em;
-$font-size-h5: 0.83em;
-$font-size-h6: 0.67em;
+$font-size-h1: 2rem;
+$font-size-h2: 1.5rem;
+$font-size-h3: 1.17rem;
+$font-size-h4: 1rem;
+$font-size-h5: 0.83rem;
+$font-size-h6: 0.67rem;
 
 // Colors
 $font-color: #ffffff;
@@ -38,6 +38,7 @@ h6 {
   color: $font-color;
 }
 
+// Navigation
 nav {
   background-color: $surfaceVariant;
 }
@@ -49,7 +50,7 @@ nav > ul {
   padding: 0;
 }
 
-nav > ul a {
+nav a {
   text-decoration: none;
   color: $onSurfaceVariant;
   font-size: $font-size-h2;
@@ -80,7 +81,45 @@ nav > ul a::before {
 
 nav > ul a:hover::before {
   opacity: 1;
-  // color: $font-color;
-  color: black;
   transition: opacity 0.1s ease-in-out;
+}
+
+#nav__active {
+  color: $font-color;
+}
+
+#nav__active::before {
+  opacity: 1;
+}
+
+// Container showing vertical margin collapse
+
+@mixin container {
+  width: 65em;
+  margin: 8em auto;
+}
+
+.container {
+  @include container;
+}
+
+$container__item-margin: 1em;
+.container__item {
+  margin: $container__item-margin;
+  padding: 1.1em;
+  font-size: $font-size-h1;
+  text-align: center;
+  background-color: $onPrimary;
+  color: $primary;
+  outline: $container__item-margin solid $primary;
+}
+
+// Container showing Flexbox solution to vertical margin collapse
+
+.container--flex {
+  @include container;
+  margin: 7em auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
