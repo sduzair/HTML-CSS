@@ -1,0 +1,41 @@
+@use "abstracts" as *;
+
+// Styles
+body {
+  font-family: $body-font;
+  background-color: $background-color;
+  color: $font-color;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  font-size: $font-size-1;
+  margin: auto;
+  min-height: 30rem;
+  width: min(calc(100vw - 2rem), 50rem);
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  overflow-x: auto;
+  background-color: $surfaceVariant;
+  border-radius: 0.5rem;
+  box-shadow: 3px 5px 3px 0px rgba(0, 0, 0);
+}
+
+.container__item {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: $primary;
+  color: $onPrimary;
+  box-shadow: 3px 5px 3px 0px rgba(0, 0, 0);
+}
+
+.container__item:nth-child(2) {
+  aspect-ratio: 1 / 1;
+}
