@@ -1,0 +1,37 @@
+@use "../abstracts" as *;
+
+// Gap Variables
+$gap-1: 2rem;
+
+.container {
+  $col: 4;
+  $width: 20rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(12rem, $width));
+  gap: $gap-1;
+  width: calc($width * $col + ($col - 1) * $gap-1);
+}
+
+.container__item {
+  background-color: $surfaceVariant;
+  color: $onSurfaceVariant;
+  font-size: $font-size-h1;
+  font-weight: bold;
+  height: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5rem;
+  box-shadow: 0.2rem 0.2rem 0.5rem black;
+}
+
+.container__item:hover {
+  background-color: $primary;
+  color: $onPrimary;
+  transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+}
+
+.container:has(:hover) > .container__item:not(:hover) {
+  opacity: 0.7;
+  transition: opacity 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+}

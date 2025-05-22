@@ -1,0 +1,24 @@
+@use "abstracts" as *;
+@use "components/container" as *;
+
+// Styles
+body {
+  font-family: $body-font;
+  background-color: $background-color;
+  color: $font-color;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Appainter Text Theme
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  color: $font-color;
+}
